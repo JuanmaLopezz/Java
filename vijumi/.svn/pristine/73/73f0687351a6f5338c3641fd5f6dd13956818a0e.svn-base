@@ -1,0 +1,53 @@
+package com.oesia.formacion.practica.architecture.domain.model;
+
+import com.oesia.formacion.practica.architecture.domain.managers.workorder.WorkOrder;
+import com.oesia.formacion.practica.architecture.persistence.entities.vendor.VendorData;
+
+public class Article {
+
+	private final WorkOrder workorder;
+	private final VendorData vendordata;
+	private final int ArticleId;
+	private String descripcion;
+	private final Colour colour;
+	private final Size size;
+	private final int NumUnit;
+	
+
+	public Article(WorkOrder workorder, VendorData vendordata, int ArticleId, String descripcion, Colour colour, Size size, int NumUnit) {
+		this.ArticleId = ArticleId;
+		this.workorder = workorder;
+		this.vendordata = vendordata;
+		this.colour = colour;
+		this.size = size;
+		this.NumUnit = NumUnit;
+	}
+
+	public Colour getColour() {
+		return colour;
+	}
+
+	public Size getSize() {
+		return size;
+	}
+
+	public WorkOrder getWorkorder() {
+		return workorder;
+	}
+
+	public VendorData getVendordata() {
+		return vendordata;
+	}
+
+	public int getArticleId() {
+		return ArticleId;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public int getNumUnit() {
+		return NumUnit;
+	}
+}

@@ -1,0 +1,91 @@
+[2020-03-02 09:20:23,180] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-03-02 09:20:23,188] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500, PUT|2|3|85|Pantalones|2|5|500, PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500, PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:20:23,189] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:20:23,196] [main] [DEBUG] RemoteSender - Articulo con id: 438, creado correctamente
+[2020-03-02 09:20:23,197] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:20:23,199] [main] [INFO ] RemoteSender - Se envía comando [PUT|2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:20:23,200] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:20:23,200] [main] [INFO ] RemoteSender - Se envía comando [PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500]
+[2020-03-02 09:20:23,201] [main] [ERROR] RemoteSender - Se ha producido un error al insertar el VENDEDOR: [4]. Error => null
+[2020-03-02 09:20:23,202] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:20:23,202] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:20:23,203] [main] [INFO ] RemoteSender - Se envía comando [PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:20:23,203] [main] [DEBUG] RemoteSender - Articulo con id: 438, actualizado correctamente
+[2020-03-02 09:20:57,004] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-03-02 09:20:57,007] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500, PUT|2|3|85|Pantalones|2|5|500, PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500, PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:20:57,008] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:20:57,015] [main] [DEBUG] RemoteSender - Articulo con id: 438, creado correctamente
+[2020-03-02 09:20:57,015] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:20:57,019] [main] [INFO ] RemoteSender - Se envía comando [PUT|2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:20:57,020] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:20:57,020] [main] [INFO ] RemoteSender - Se envía comando [PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500]
+[2020-03-02 09:20:57,021] [main] [ERROR] RemoteSender - Se ha producido un error al insertar el VENDEDOR: [4]. Error => null
+[2020-03-02 09:20:57,021] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:20:57,021] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:20:57,021] [main] [INFO ] RemoteSender - Se envía comando [PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:20:57,022] [main] [DEBUG] RemoteSender - Articulo con id: 438, actualizado correctamente
+[2020-03-02 09:22:27,360] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-03-02 09:22:27,362] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500, PUT|2|3|85|Pantalones|2|5|500, PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500, PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:22:27,363] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:22:27,369] [main] [DEBUG] RemoteSender - Articulo con id: 438, creado correctamente
+[2020-03-02 09:22:27,369] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:22:27,370] [main] [INFO ] RemoteSender - Se envía comando [PUT|2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:22:27,371] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:22:27,371] [main] [INFO ] RemoteSender - Se envía comando [PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500]
+[2020-03-02 09:22:27,371] [main] [ERROR] RemoteSender - Se ha producido un error al insertar el VENDEDOR: [4]. Error => null
+[2020-03-02 09:22:27,372] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:22:27,372] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:22:27,373] [main] [INFO ] RemoteSender - Se envía comando [PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:22:27,373] [main] [DEBUG] RemoteSender - Articulo con id: 438, actualizado correctamente
+[2020-03-02 09:22:37,222] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-03-02 09:22:37,225] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500, PUT|2|3|85|Pantalones|2|5|500, PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500, PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:22:37,225] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:22:37,234] [main] [DEBUG] RemoteSender - Articulo con id: 438, creado correctamente
+[2020-03-02 09:22:37,235] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:22:37,235] [main] [INFO ] RemoteSender - Se envía comando [PUT|2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:22:37,236] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:22:37,236] [main] [INFO ] RemoteSender - Se envía comando [PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500]
+[2020-03-02 09:22:37,237] [main] [ERROR] RemoteSender - Se ha producido un error al insertar el VENDEDOR: [4]. Error => null
+[2020-03-02 09:22:37,237] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:22:37,238] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:22:37,238] [main] [INFO ] RemoteSender - Se envía comando [PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:22:37,239] [main] [DEBUG] RemoteSender - Articulo con id: 438, actualizado correctamente
+[2020-03-02 09:27:02,898] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-03-02 09:27:02,900] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500, PUT|2|3|85|Pantalones|2|5|500, PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500, PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:27:02,901] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:27:02,908] [main] [DEBUG] RemoteSender - Articulo con id: 438, creado correctamente
+[2020-03-02 09:27:02,908] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:27:02,909] [main] [INFO ] RemoteSender - Se envía comando [PUT|2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:27:02,909] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:27:02,910] [main] [INFO ] RemoteSender - Se envía comando [PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500]
+[2020-03-02 09:27:02,910] [main] [ERROR] RemoteSender - Se ha producido un error al insertar el VENDEDOR: [4]. Error => null
+[2020-03-02 09:27:02,910] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:27:02,911] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:27:02,911] [main] [INFO ] RemoteSender - Se envía comando [PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:27:02,912] [main] [DEBUG] RemoteSender - Articulo con id: 438, actualizado correctamente
+[2020-03-02 09:28:31,899] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-03-02 09:28:31,902] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500, PUT|2|3|85|Pantalones|2|5|500, PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500, PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:28:31,902] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:28:31,909] [main] [DEBUG] RemoteSender - Articulo con id: 438, creado correctamente
+[2020-03-02 09:28:31,909] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:28:31,910] [main] [INFO ] RemoteSender - Se envía comando [PUT|2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:28:31,910] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:28:31,911] [main] [INFO ] RemoteSender - Se envía comando [PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500]
+[2020-03-02 09:28:31,911] [main] [ERROR] RemoteSender - Se ha producido un error al insertar el VENDEDOR: [4]. Error => null
+[2020-03-02 09:28:31,911] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:28:31,912] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:28:31,912] [main] [INFO ] RemoteSender - Se envía comando [PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:28:31,913] [main] [DEBUG] RemoteSender - Articulo con id: 438, actualizado correctamente, stock = 1000
+[2020-03-02 09:29:50,580] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-03-02 09:29:50,582] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500, PUT|2|3|85|Pantalones|2|5|500, PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500, PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:29:50,583] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:29:50,590] [main] [DEBUG] RemoteSender - Articulo con id: 438, creado correctamente
+[2020-03-02 09:29:50,590] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:29:50,591] [main] [INFO ] RemoteSender - Se envía comando [PUT|2|3|85|Pantalones|2|5|500]
+[2020-03-02 09:29:50,591] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:29:50,592] [main] [INFO ] RemoteSender - Se envía comando [PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500]
+[2020-03-02 09:29:50,593] [main] [ERROR] RemoteSender - Se ha producido un error al insertar el VENDEDOR: [4]. Error => null
+[2020-03-02 09:29:50,593] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:29:50,593] [main] [ERROR] RemoteSender - Se ha producido un error al insertar la TALLA: [5]. Error => null
+[2020-03-02 09:29:50,593] [main] [INFO ] RemoteSender - Se envía comando [PUT|5|2|438|Camiseta|1|2|500]
+[2020-03-02 09:29:50,594] [main] [DEBUG] RemoteSender - Articulo con id: 438, actualizado correctamente

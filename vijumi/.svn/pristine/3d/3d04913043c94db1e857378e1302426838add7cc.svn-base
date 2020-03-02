@@ -1,0 +1,26 @@
+package com.oesia.formacion.practica.architecture.domain.managers.article;
+
+import com.oesia.formacion.practica.architecture.domain.managers.AbstractManager;
+import com.oesia.formacion.practica.architecture.domain.model.Article;
+import com.oesia.formacion.practica.architecture.domain.model.Size;
+import com.oesia.formacion.practica.architecture.persistence.entities.article.ArticleEntity;
+
+public class ArticleManagerImpl extends AbstractManager<Article> implements ArticleManager {
+
+	private final ArticleEntity articleEntity;
+
+	public ArticleManagerImpl(ArticleEntity articleEntity) {
+		super(articleEntity);
+		this.articleEntity = articleEntity;
+	}
+
+	@Override
+	public Size findSizeById(Integer sizeId) {
+		return articleEntity.findSizeById(sizeId);
+	}
+
+	@Override
+	public void update(Article article) {
+		articleEntity.update(article);
+	}
+}

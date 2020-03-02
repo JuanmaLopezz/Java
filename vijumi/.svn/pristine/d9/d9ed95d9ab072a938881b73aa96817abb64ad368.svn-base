@@ -1,0 +1,5 @@
+package com.oesia.formacion.practica.architecture.communications.processors;
+
+public class TextProcessor {
+
+}

@@ -1,0 +1,118 @@
+package com.oesia.formacion.practica.architecture.communications;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.oesia.formacion.practica.architecture.communications.messages.put.Put;
+import com.oesia.formacion.practica.architecture.communications.messages.put.Put.Builder;
+import com.oesia.formacion.practica.architecture.domain.managers.article.ArticleManager;
+import com.oesia.formacion.practica.architecture.domain.managers.article.ArticleManagerImpl;
+import com.oesia.formacion.practica.architecture.domain.managers.workorder.WorkOrder;
+import com.oesia.formacion.practica.architecture.domain.model.Article;
+import com.oesia.formacion.practica.architecture.domain.model.Colour;
+import com.oesia.formacion.practica.architecture.domain.model.Message;
+import com.oesia.formacion.practica.architecture.domain.model.Size;
+import com.oesia.formacion.practica.architecture.persistence.daos.article.ArticleDao;
+import com.oesia.formacion.practica.architecture.persistence.daos.article.ArticleDaoImpl;
+import com.oesia.formacion.practica.architecture.persistence.entities.article.ArticleEntity;
+import com.oesia.formacion.practica.architecture.persistence.entities.article.ArticleEntityImpl;
+import com.oesia.formacion.practica.architecture.persistence.entities.vendor.VendorData;
+import com.oesia.formacion.practica.context.ContextFactory;
+
+public class MessageManagerImpl implements MessageManager {
+
+	private static final int PUT_ID_WORKORDER_POSITION = 0;
+	private static final int PUT_ID_VENDOR_POSITION = 1;
+	private static final int PUT_COD_ARTICLE_POSITION = 2;
+	private static final int PUT_DESCRIPTION_ARTICLE_POSITION = 3;
+	private static final int PUT_ID_COLOR_POSITION = 4;
+	private static final int PUT_ID_TALLA_POSITION = 5;
+	private static final int PUT_NUM_UDS_POSITION = 6;
+
+	@Override
+	public void recive(String message) {
+
+		List<List<String>> records = new ArrayList<List<String>>();
+		Message information = getMessageInformation(message);
+		switch (information.getOperation()) {
+		case "PUT":
+			putOperation(records);
+			break;
+
+		default:
+
+			break;
+		}
+	}
+
+	private Message getMessageInformation(String messageOriginal) {
+		List<String> listaMensajes = getListaMessages(messageOriginal);
+		Message messageWrapper = setMessageInformation(listaMensajes);
+		return messageWrapper;
+	}
+
+	@Override
+	public void send(String message) {
+		// TODO Auto-generated method stub
+	}
+
+	public List<String> getListaMessages(String message) {
+		List<String> listaMessages = new ArrayList<String>();
+		String[] divMessage = message.split("\\*");
+		for (int i = 0; i < divMessage.length; i++) {
+			listaMessages.add(divMessage[i]);
+		}
+		return listaMessages;
+	}
+
+	private static void putOperation(List<List<String>> records) {
+		for (List<String> row : records) {
+
+			int idWorkOrder = Integer.parseInt(row.get(PUT_ID_WORKORDER_POSITION));
+			int idVendor = Integer.parseInt(row.get(PUT_ID_VENDOR_POSITION));
+			int idArticle = Integer.parseInt(row.get(PUT_COD_ARTICLE_POSITION));
+			String descriptionArticle = row.get(PUT_DESCRIPTION_ARTICLE_POSITION);
+			int idColor = Integer.parseInt(row.get(PUT_ID_COLOR_POSITION));
+			int idTalla = Integer.parseInt(row.get(PUT_ID_TALLA_POSITION));
+			int numUds = Integer.parseInt(row.get(PUT_NUM_UDS_POSITION));
+
+			Put.Builder putBuilder = new Builder();
+			putBuilder.idArticle(idArticle);
+
+			Put put = putBuilder.build();
+
+//			ArticleManager articleManager = ContextFactory.getContext().get(ArticleManager.class);
+//			if (articleManager.findById(idArticle).equals(article)) {
+//				articleManager.update(article);
+//			} else {
+//				articleManager.create(article);
+//			}
+		}
+	}
+
+//	public List<String> dataSplitter(String s) {
+//		List<String> cadena = new ArrayList<String>();
+//		String[] arrSplit = s.split("|");
+//		System.out.println("Primer atributo" + arrSplit[0]);
+//		for (int i = 0; i < arrSplit.length; i++) {
+//			cadena.add(arrSplit[i]);
+//		}
+//		return cadena;
+//	}
+
+	public Message setMessageInformation(List<String> mensajesSinSplitear) {
+		Message message = null;
+		List<List<String>> messageList = new ArrayList<List<String>>();
+		for (int i = 0; i < mensajesSinSplitear.size(); i++) {
+			List<String> atributeList = Arrays.asList(mensajesSinSplitear.get(i).split("\\|"));
+			if (i == 0) {
+				message.setOperation(atributeList.get(0));
+				atributeList.remove(0);
+			}
+			messageList.add(atributeList);
+		}
+		message.setRecords(messageList);
+		return message;
+	}
+}

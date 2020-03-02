@@ -1,0 +1,17 @@
+package com.oesia.formacion.practica.architecture.communications;
+
+public abstract class MessageManagerImpl implements MessageManager {
+
+	@Override
+	public void recive(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void send(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

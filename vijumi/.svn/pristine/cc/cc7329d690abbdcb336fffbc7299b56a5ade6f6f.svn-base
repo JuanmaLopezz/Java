@@ -1,0 +1,11 @@
+package com.oesia.formacion.practica.architecture.persistence.entities.message;
+
+import com.oesia.formacion.practica.architecture.domain.model.Message;
+import com.oesia.formacion.practica.architecture.persistence.entities.Entity;
+
+public interface MessageEntity extends Entity<Message>{	
+	
+	void recive(String message);
+
+	void send(String message);
+}

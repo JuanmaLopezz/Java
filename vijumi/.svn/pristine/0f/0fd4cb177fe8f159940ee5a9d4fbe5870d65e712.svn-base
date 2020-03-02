@@ -1,0 +1,37 @@
+package com.oesia.formacion.practica.architecture.communications;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.oesia.formacion.practica.architecture.domain.model.Message;
+
+public class MessageManagerImpl implements MessageManager {
+
+	@Override
+	public void recive(String message) {
+
+		String operation = "PUT";
+		List<List<String>> records = new ArrayList<List<String>>();
+		Message information = new Message(operation, records);
+		switch (information.getOperation()) {
+		case "PUT":
+			for(List<String> row: records) {
+				int idWorkOrder = Integer.parseInt(row.get(0));
+				int idVendor = Integer.parseInt(row.get(1));
+				
+			}
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	@Override
+	public void send(String message) {
+		// TODO Auto-generated method stub
+
+	}
+
+
+}

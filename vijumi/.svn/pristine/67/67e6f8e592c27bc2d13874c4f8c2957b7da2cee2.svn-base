@@ -1,0 +1,23 @@
+package com.oesia.formacion.practica.architecture.domain.model;
+
+import java.util.Set;
+
+public class Message {
+
+	private final String operation;
+	private final Set<Set<String>> records;
+
+	public Message(String operation, Set<Set<String>> records) {
+		this.operation = operation;
+		this.records = records;
+	}
+
+	public String getOperation() {
+		return operation;
+	}
+
+	public Set<Set<String>> getRecords() {
+		return records;
+	}
+
+}

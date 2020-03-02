@@ -1,0 +1,12 @@
+package com.oesia.formacion.practica.architecture.communications;
+
+import java.util.List;
+
+public interface MessageManager {
+
+	void recive(String message);
+
+	void send(String message);
+
+	List<String> getListaMessages(String messageInicial);
+}

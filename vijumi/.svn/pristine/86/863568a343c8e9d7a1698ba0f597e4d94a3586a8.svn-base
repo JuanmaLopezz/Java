@@ -1,0 +1,23 @@
+package com.oesia.formacion.practica.architecture.domain.model;
+
+public class Article {
+
+	private final Colour colour;
+	private final Size size;
+
+	public Article(Colour colour, Size size) {
+		this.colour = colour;
+		this.size = size;
+	}
+
+
+	public Colour getColour() {
+		return colour;
+	}
+
+	public Size getSize() {
+		return size;
+	}
+
+	//TODO: Añadir resto de campos, actualizar constructor, etc
+}

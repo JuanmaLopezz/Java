@@ -1,0 +1,6 @@
+[2020-02-25 10:10:39,295] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-02-25 10:10:39,298] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500]
+[2020-02-25 10:10:39,298] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500]
+[2020-02-25 11:25:35,730] [main] [INFO ] App - Arrancando [Aplicación de Formación]
+[2020-02-25 11:25:35,732] [main] [DEBUG] RemoteSender - Lista de commandos [PUT|1|1|438|Pantalones|1|1|500]
+[2020-02-25 11:25:35,732] [main] [INFO ] RemoteSender - Se envía comando [PUT|1|1|438|Pantalones|1|1|500]

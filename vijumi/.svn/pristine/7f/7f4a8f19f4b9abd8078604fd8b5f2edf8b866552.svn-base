@@ -1,0 +1,77 @@
+package com.oesia.formacion.practica.architecture.communications;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.oesia.formacion.practica.architecture.domain.model.Message;
+
+public class MessageManagerImpl implements MessageManager {
+
+	@Override
+	public void recive(String message) {
+		
+		List<List<String>> records = new ArrayList<List<String>>();
+		Message information = getMessageInformation(message);
+		switch (information.getOperation()) {
+		case "PUT":
+			for(List<String> row: records) {
+				int idWorkOrder = Integer.parseInt(row.get(0));
+				int idVendor = Integer.parseInt(row.get(1));
+				
+			}
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	private Message getMessageInformation(String messageOriginal) {
+		 List<String>  listaMensajes = getListaMessages(messageOriginal);
+		 Message messageWrapper = setMessageInformation(listaMensajes);
+		 return messageWrapper;
+	}
+
+	@Override
+	public void send(String messageOriginal) {
+		
+
+	}
+
+	
+	public List<String> getListaMessages(String message) {
+		List<String> listaMessages = new ArrayList<String>();
+		String[] divMessage = message.split("\\*");
+		for (int i = 0; i < divMessage.length; i++) {
+			listaMessages.add(divMessage[i]);
+		}
+		return listaMessages;
+	}
+
+//	public List<String> dataSplitter(String s) {
+//		List<String> cadena = new ArrayList<String>();
+//		String[] arrSplit = s.split("|");
+//		System.out.println("Primer atributo" + arrSplit[0]);
+//		for (int i = 0; i < arrSplit.length; i++) {
+//			cadena.add(arrSplit[i]);
+//		}
+//		return cadena;
+//	}
+
+	public Message setMessageInformation(List<String> mensajesSinSplitear) {
+		Message message = null;
+		List<List<String>> messageList = new ArrayList<List<String>>();
+		for (int i = 0; i < mensajesSinSplitear.size(); i++) {
+			List<String> atributeList = Arrays.asList(mensajesSinSplitear.get(i).split("\\|"));
+			if (i == 0) {
+				message.setOperation(atributeList.get(0));
+				atributeList.remove(0);
+			}
+			messageList.add(atributeList);
+		}
+		message.setRecords(messageList);
+		return message;
+	}
+
+}

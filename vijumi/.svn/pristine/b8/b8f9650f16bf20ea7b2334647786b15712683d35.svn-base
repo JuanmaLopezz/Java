@@ -1,0 +1,11 @@
+package com.oesia.formacion.practica.architecture.communications;
+
+import com.oesia.formacion.practica.architecture.domain.managers.Manager;
+import com.oesia.formacion.practica.architecture.domain.model.Message;
+
+public interface MessageManager extends Manager<Message>{
+
+	void recive(String message);
+
+	void send(String message);
+}

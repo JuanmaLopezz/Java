@@ -1,0 +1,28 @@
+package com.oesia.formacion.practica.architecture.communications;
+
+import com.oesia.formacion.practica.architecture.domain.managers.AbstractManager;
+import com.oesia.formacion.practica.architecture.domain.model.Message;
+import com.oesia.formacion.practica.architecture.persistence.entities.message.MessageEntity;
+
+public class MessageManagerImpl extends AbstractManager<Message> implements MessageManager{
+	
+	
+	private final MessageEntity messageEntity;
+
+	public MessageManagerImpl(MessageEntity messageEntity) {
+		super(messageEntity);
+		this.messageEntity = messageEntity;
+	}
+
+	@Override
+	public void recive(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void send(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+}

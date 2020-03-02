@@ -1,0 +1,86 @@
+package com.oesia.formacion.practica.architecture.communications;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.oesia.formacion.practica.architecture.communications.messages.put.Put;
+import com.oesia.formacion.practica.architecture.communications.messages.put.Put.Builder;
+import com.oesia.formacion.practica.architecture.communications.processors.Processor;
+import com.oesia.formacion.practica.architecture.communications.processors.PutProcessor;
+import com.oesia.formacion.practica.architecture.domain.managers.article.ArticleManager;
+import com.oesia.formacion.practica.architecture.domain.model.Message;
+import com.oesia.formacion.practica.context.ContextFactory;
+
+public class MessageManagerImpl implements MessageManager {
+
+	private static final int PUT_ID_WORKORDER_POSITION = 0;
+	private static final int PUT_ID_VENDOR_POSITION = 1;
+	private static final int PUT_COD_ARTICLE_POSITION = 2;
+	private static final int PUT_DESCRIPTION_ARTICLE_POSITION = 3;
+	private static final int PUT_ID_COLOR_POSITION = 4;
+	private static final int PUT_ID_TALLA_POSITION = 5;
+	private static final int PUT_NUM_UDS_POSITION = 6;
+
+	@Override
+	public void recive(String message) {
+
+		Message information = getMessageInformation(message);
+		switch (information.getOperation()) {
+		case "PUT":
+			Processor putProcessor = ContextFactory.getContext().get(PutProcessor.class);
+			putProcessor.process(information);
+			break;
+
+		default:
+			send("KO");
+			break;
+		}
+	}
+
+	@Override
+	public void send(String message) {
+		// TODO Auto-generated method stub
+	}
+
+	public List<String> getListaMessages(String message) {
+		List<String> listaMessages = new ArrayList<String>();
+		String[] divMessage = message.split("\\*");
+		for (int i = 0; i < divMessage.length; i++) {
+			listaMessages.add(divMessage[i]);
+		}
+		return listaMessages;
+	}
+
+//	public List<String> dataSplitter(String s) {
+//		List<String> cadena = new ArrayList<String>();
+//		String[] arrSplit = s.split("|");
+//		System.out.println("Primer atributo" + arrSplit[0]);
+//		for (int i = 0; i < arrSplit.length; i++) {
+//			cadena.add(arrSplit[i]);
+//		}
+//		return cadena;
+//	}
+
+	private Message getMessageInformation(String messageOriginal) {
+		List<String> listaMensajes = getListaMessages(messageOriginal);
+		Message messageWrapper = setMessageInformation(listaMensajes);
+		return messageWrapper;
+	}
+
+	public Message setMessageInformation(List<String> mensajesSinSplitear) {
+		Message message = null;
+		List<List<String>> messageList = new ArrayList<List<String>>();
+		for (int i = 0; i < mensajesSinSplitear.size(); i++) {
+			List<String> atributeList = Arrays.asList(mensajesSinSplitear.get(i).split("\\|"));
+			if (i == 0) {
+				message.setOperation(atributeList.get(0));
+				atributeList.remove(0);
+			}
+			messageList.add(atributeList);
+		}
+		message.setRecords(messageList);
+		return message;
+	}
+
+}

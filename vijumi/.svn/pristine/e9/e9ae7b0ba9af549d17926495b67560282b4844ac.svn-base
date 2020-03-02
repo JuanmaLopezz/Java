@@ -1,0 +1,24 @@
+#### Lista de Comandos
+# Los comandos comienzan por un código de comando y después se envían los datos necesarios para ese comando separados por una barra vertical ( | ).
+# Si para un comando se quieren enviar diferentes datos asociados, se deben separar por asterisco ( * )
+# Ejemplo : PUT|23|1|438|500*24|1|439|100 
+
+#### Descripción de los comandos y sus datos asociados
+# PUT - Se informa de la llegada de mercancía. Se actualiza el Stock
+# 	Datos Asociados -> PUT|Id Orden de trabajo|Id Vendedor|Código Artículo|Descripcion|Id Color|Id Talla|Unidades
+# INFO - Se solicita información de mercancía
+# 	Datos Asociados -> INF|Código Artículo
+# STOCK - Se envía información solicitada en INFO del artículo
+# 	Datos Asociados -> STOCK|Código Articulo|Descripcion|Color|Talla|Unidades
+# OK - Respuesta de que no ha habido errores. No se envía desde el Remoto, sino que la recibe.
+# 	Datos Asociados -> OK|Id Orden de trabajo
+# KO - Respuesta de que ha habido errores. No se envía desde el Remoto, sino que la recibe.
+# 	Datos Asociados -> KO|Id Orden de trabajo
+
+
+
+####################### Comandos #######################
+
+######### Test PUT #########
+### Con Respuesta OK
+PUT|1|1|438|Pantalones|1|1|500*2|2|438|Pantalones|1|1|500
