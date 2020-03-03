@@ -23,5 +23,7 @@
 ### Con Respuesta OK
 PUT|1|1|438|Pantalones|1|1|500*2|3|85|Pantalones|2|5|500
 PUT|2|3|85|Pantalones|2|5|500
-PUT|6|4|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500
+PUT|6|1|48|Camiseta|3|3|500*7|3|56|Camisa|2|5|500*2|3|85|Camiseta|2|5|500
 PUT|5|2|438|Camiseta|1|2|500
+INFO|438
+INFO|48

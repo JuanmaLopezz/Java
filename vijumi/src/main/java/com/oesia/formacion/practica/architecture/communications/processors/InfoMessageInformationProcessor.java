@@ -8,24 +8,25 @@ import com.oesia.formacion.practica.architecture.communications.messages.info.In
 import com.oesia.formacion.practica.architecture.domain.model.Message;
 import com.oesia.formacion.practica.context.ContextFactory;
 
-public class InfoMessageInformationProcessor implements Processor{
-	
-	private static final int COD_ARTICLE_POSITION = 2;
+public class InfoMessageInformationProcessor implements Processor {
 
 	@Override
 	public void process(Message message) {
 		for (List<String> row : message.getRecords()) {
-			int idArticle = Integer.parseInt(row.get(COD_ARTICLE_POSITION));
-			
+
 			InfoMessageInformation.Builder infoMessageBuilder = new Builder();
-			infoMessageBuilder.idArticle(idArticle);
-			infoMessageBuilder.build();
+			infoMessageBuilder.articleIdsList(row);
+			InfoMessageInformation infoMessage = infoMessageBuilder.build();
 			
+			StockInformationProcessor stockProcessor = ContextFactory.getContext().get(StockInformationProcessor.class);
 			MessageManager messageManager = ContextFactory.getContext().get(MessageManager.class);
-			
+			try {
+				stockProcessor.process(infoMessage);
+			} catch (Exception e) {
+				messageManager.send(String.format("---- KO ---- [%s]", e.getMessage()));
+			}
 		}
-		
-		
+
 	}
 
 }

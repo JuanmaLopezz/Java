@@ -5,7 +5,9 @@ import java.util.Map;
 
 import com.oesia.formacion.practica.architecture.communications.MessageManager;
 import com.oesia.formacion.practica.architecture.communications.MessageManagerImpl;
+import com.oesia.formacion.practica.architecture.communications.processors.InfoMessageInformationProcessor;
 import com.oesia.formacion.practica.architecture.communications.processors.PutInformationProcessor;
+import com.oesia.formacion.practica.architecture.communications.processors.StockInformationProcessor;
 import com.oesia.formacion.practica.architecture.domain.managers.article.ArticleManager;
 import com.oesia.formacion.practica.architecture.domain.managers.article.ArticleManagerImpl;
 import com.oesia.formacion.practica.architecture.persistence.daos.article.ArticleDao;
@@ -29,7 +31,8 @@ public class Context {
 		set(ArticleManager.class, new ArticleManagerImpl(get(ArticleEntity.class)));
 		set(MessageManager.class, new MessageManagerImpl());
 		set(PutInformationProcessor.class, new PutInformationProcessor());
-
+		set(InfoMessageInformationProcessor.class, new InfoMessageInformationProcessor());
+		set(StockInformationProcessor.class, new StockInformationProcessor());
 	}
 
 	public <O> void set(Class<? super O> type, O instance) {

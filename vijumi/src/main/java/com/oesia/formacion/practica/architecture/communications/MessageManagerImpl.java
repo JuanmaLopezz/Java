@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.oesia.formacion.practica.architecture.communications.processors.InfoMessageInformationProcessor;
 import com.oesia.formacion.practica.architecture.communications.processors.PutInformationProcessor;
 import com.oesia.formacion.practica.architecture.domain.model.Message;
 import com.oesia.formacion.practica.context.ContextFactory;
 
 public class MessageManagerImpl implements MessageManager {
-
 
 	@Override
 	public void recive(String message) {
@@ -17,8 +17,15 @@ public class MessageManagerImpl implements MessageManager {
 		Message information = getMessageInformation(message);
 		switch (information.getOperation()) {
 		case "PUT":
-			PutInformationProcessor putInformationProcessor = ContextFactory.getContext().get(PutInformationProcessor.class);
+			PutInformationProcessor putInformationProcessor = ContextFactory.getContext()
+					.get(PutInformationProcessor.class);
 			putInformationProcessor.process(information);
+			break;
+
+		case "INFO":
+			InfoMessageInformationProcessor infoInformationProcessor = ContextFactory.getContext()
+					.get(InfoMessageInformationProcessor.class);
+			infoInformationProcessor.process(information);
 			break;
 
 		default:
@@ -62,14 +69,14 @@ public class MessageManagerImpl implements MessageManager {
 		message.setRecords(messageList);
 		return message;
 	}
-	
+
 	private List<String> setAtributeList(Message message, List<String> atributeList) {
 		message.setOperation(atributeList.get(0));
 		List<String> modifiedAtributeList = new ArrayList<String>();
 		for (int iterator = 1; iterator < atributeList.size(); iterator++) {
 			modifiedAtributeList.add(atributeList.get(iterator));
 		}
-		return modifiedAtributeList; 
+		return modifiedAtributeList;
 	}
 
 }

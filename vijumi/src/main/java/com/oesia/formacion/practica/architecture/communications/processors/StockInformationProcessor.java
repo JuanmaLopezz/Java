@@ -1,32 +1,25 @@
 package com.oesia.formacion.practica.architecture.communications.processors;
 
-import java.util.List;
-
 import com.oesia.formacion.practica.architecture.communications.MessageManager;
+import com.oesia.formacion.practica.architecture.communications.messages.info.InfoMessageInformation;
 import com.oesia.formacion.practica.architecture.communications.messages.stock.StockMessageInformation;
 import com.oesia.formacion.practica.architecture.communications.messages.stock.StockMessageInformation.Builder;
 import com.oesia.formacion.practica.architecture.domain.managers.article.ArticleManager;
 import com.oesia.formacion.practica.architecture.domain.model.Article;
-import com.oesia.formacion.practica.architecture.domain.model.Message;
 import com.oesia.formacion.practica.context.ContextFactory;
 
-public class StockInformationProcessor implements Processor {
+public class StockInformationProcessor {
 
-	private static final int STOCK_ARTICLE_ID_POSITION = 0;
+	public void process(InfoMessageInformation infoMessageInformation) {
 
-	@Override
-
-	public void process(Message message) {
-
-		for (List<String> row : message.getRecords()) {
-
-			int idArticle = Integer.parseInt(row.get(STOCK_ARTICLE_ID_POSITION));
+		for (String idArticleString : infoMessageInformation.getArticleIdsList()) {
+			Integer idArticle = Integer.parseInt(idArticleString);
 
 			ArticleManager articleManager = ContextFactory.getContext().get(ArticleManager.class);
 			MessageManager messageManager = ContextFactory.getContext().get(MessageManager.class);
-			
+
 			Article articleDataBase = articleManager.findById(idArticle);
-			
+
 			if (articleDataBase != null) {
 				StockMessageInformation.Builder stockBuilder = new Builder();
 				stockBuilder.idArticle(idArticle);
@@ -34,12 +27,16 @@ public class StockInformationProcessor implements Processor {
 				stockBuilder.idColor(articleDataBase.getColour().getId());
 				stockBuilder.idTalla(articleDataBase.getSize().getId());
 				stockBuilder.numUds(articleDataBase.getNumUnit());
-				
-				messageManager.send(String.format("STOCK|%s|%s|%s|%s|%s", idArticle, articleDataBase.getDescription(), articleDataBase.getColour(), articleDataBase.getSize(), articleDataBase.getNumUnit()));
 
-				StockMessageInformation stockMessageInformation = stockBuilder.build();
+				StockMessageInformation stockInformation = stockBuilder.build();
+
+				messageManager.send(String.format("STOCK|%s|%s|%s|%s|%s\n", stockInformation.getIdArticle(),
+						stockInformation.getDescriptionArticle(), stockInformation.getIdColor(),
+						stockInformation.getIdTalla(), stockInformation.getNumUds()));
+
 			} else {
-				messageManager.send("KO");
+
+				messageManager.send(String.format("---- KO ---- El articulo con id[%s] no se encuentra en los datos", idArticle));
 			}
 		}
 	}
